@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You 💌</title>
+
+<style>
+body{
+  background:linear-gradient(135deg,#ffafbd,#ffc3a0);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  font-family:sans-serif;
+}
+.box{
+  background:white;
+  padding:25px;
+  border-radius:20px;
+  width:90%;
+  max-width:360px;
+}
+</style>
+</head>
+
+<body>
+<div class="box">
+  <div id="text"></div>
+</div>
+
+<script>
+const msg=`My Chipo,
+
+Thank you for being the friend l can always go to 
+with the good a bad news.
+Best hugss and boobss.
+
+I love you 💖`;
+
+let i=0;
+function type(){
+  if(i<msg.length){
+    document.getElementById("text").innerHTML+=msg[i++];
+    setTimeout(type,50);
+  }
+}
+type();
+</script>
+</body>
+</html>
