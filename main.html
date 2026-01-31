@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Chipo 💖</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: url("chipo.jpg") no-repeat center/cover;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+.card {
+  background: rgba(255,255,255,0.85);
+  padding: 25px;
+  border-radius: 25px;
+  text-align: center;
+  width: 90%;
+  max-width: 350px;
+  margin: auto;
+  margin-top: 15vh;
+  box-shadow: 0 0 25px rgba(255,77,109,0.7);
+}
+
+.glow {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.4rem;
+  color: #ff4d6d;
+  text-shadow: 0 0 10px #ff8fa3, 0 0 25px #ff4d6d;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ff8fa3; }
+  to { text-shadow: 0 0 30px #ff4d6d; }
+}
+
+button {
+  background: #ff4d6d;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 1rem;
+  margin-top: 15px;
+}
+
+.heart {
+  position: fixed;
+  color: pink;
+  font-size: 24px;
+  pointer-events: none;
+}
+
+#tap {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div id="tap" onclick="startMusic()">Tap to start 💖</div>
+
+<audio id="music" loop playsinline preload="auto">
+  <source src="love.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+  <h1 class="glow">Chipo 💕</h1>
+  <p>To the one who brings laughter ,stress and comfort.</p>
+  <p>Please be my Valentine? 💖</p>
+  <button onclick="location.href='yes.html'">Yes 💘</button>
+</div>
+
+<script>
+function startMusic() {
+  const m = document.getElementById("music");
+  m.play();
+  m.volume = 0.8;
+  document.getElementById("tap").remove();
+  localStorage.setItem("music","yes");
+}
+
+// beat-synced hearts
+const beat = [300,200,500];
+let i = 0;
+
+function heartBeat(){
+  const h = document.createElement("div");
+  h.className = "heart";
+  h.innerText = "❤";
+  h.style.left = Math.random()*100+"vw";
+  h.style.top = "-10px";
+
+  h.animate([
+    {transform:"scale(1)"},
+    {transform:"scale(1.6)"},
+    {transform:"scale(1)"}
+  ],{duration:400});
+
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+
+  setTimeout(()=>{
+    i=(i+1)%beat.length;
+    heartBeat();
+  },beat[i]);
+}
+heartBeat();
+</script>
+
+</body>
+</html>
