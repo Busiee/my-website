@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YAY 💖</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+img {
+  width: 80%;
+  max-width: 300px;
+  border-radius: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<audio id="music" loop playsinline>
+  <source src="love.mp3" type="audio/mpeg">
+</audio>
+
+<h1>She said YES 💍💖</h1>
+<img id="slide" src="photo1.jpg">
+
+<button onclick="location.href='secret.html'">One More Thing 💌</button>
+
+<script>
+const m=document.getElementById("music");
+if(localStorage.getItem("music")==="yes"){m.play();}
+
+;
+</script>
+
+</body>
+</html>
