@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>A Card for You 💌</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: url("chipo.jpg") no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+.card {
+  background: white;
+  width: 280px;
+  height: 200px;
+  border-radius: 20px;
+  text-align: center;
+  padding: 20px;
+  animation: float 2s ease-in-out infinite;
+}
+
+  @keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+  
+button {
+  background: #ff9800;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 1rem;
+}
+</style>
+</head>
+
+<body>
+<div class="card">
+  <h2>💌 For You</h2>
+  <p>I made something special</p>
+  <button onclick="location.href='main.html'">Open Card 💖</button>
+</div>
+</body>
+</html>
